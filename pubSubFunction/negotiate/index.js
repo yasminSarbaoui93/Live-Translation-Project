@@ -13,11 +13,9 @@
     //context.done();
     
 //}
+const { WebPubSubServiceClient } = require("@azure/web-pubsub");
 
-import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import { WebPubSubServiceClient } from "@azure/web-pubsub";
-
-const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
+const httpTrigger = async function (context, req) {
     context.log('HTTP trigger function processed a request.');
     let serviceClient = new WebPubSubServiceClient(process.env["WebPubSubConnectionString"], "sample_powerappshub");
     let token = await serviceClient.getClientAccessToken({ roles: ["webpubsub.sendToGroup.pa", "webpubsub.joinLeaveGroup.pa"] }); 
@@ -25,7 +23,6 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         // status: 200, /* Defaults to 200 */
         body: token.url
     };
-
 };
 
-export default httpTrigger;
+module.exports = httpTrigger;
