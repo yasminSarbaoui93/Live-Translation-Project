@@ -14,12 +14,7 @@
       "type": "http",
       "direction": "out",
       "name": "res"
-    },
-    {
-      "type": "webPubSunConnection",
-      "name": "connection",
-      "hub": "notification",
-      "direction": "in"
     }
-  ]
+  ],
+  "scriptFile": "../dist/negotiate/index.ts"
 }

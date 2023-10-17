@@ -1,0 +1,7 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "WebPubSubConnectionString": "Endpoint=https://rapvsai.webpubsub.azure.com;AccessKey=W5QBk88N3Ca6qOpsnRTGzIarRXPcDKt97XQ74Kulaxc=;Version=1.0;"
+  }
+}
